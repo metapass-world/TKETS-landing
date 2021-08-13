@@ -9,4 +9,4 @@ COPY . ./
 
 RUN npm run heroku-postbuild
 FROM BUILD as RUN
-CMD npm run start
+CMD export HTTPS=true && npm run start
