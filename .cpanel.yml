@@ -1,6 +1,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/tketrcpw/landing/
+    - source /home/tketrcpw/nodevenv/landing/10/bin/activate
     - npm install
     - npm run build
     - cp -r ./build $DEPLOYPATH
