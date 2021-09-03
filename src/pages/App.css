@@ -1,0 +1,5 @@
+.App-root {
+  background: 'white';
+  min-height: 100vh;
+  display: flex;
+}
