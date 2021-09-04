@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   gutterBackground: {
     background: (props: TicketProps) => {
       const ticketBackground = props.style.colors.ticketBackground ? props.style.colors.ticketBackground : '#fff';
-      return `linear-gradient(90deg, rgba(255,255,255,0) 30%, ${ticketBackground} 100%), url("${props.style.image}")`
+      return `linear-gradient(90deg, rgba(255,255,255,0) 30%, ${ticketBackground} 110%), url("${props.style.image}")`
     },
   },
   detailsBody: {
