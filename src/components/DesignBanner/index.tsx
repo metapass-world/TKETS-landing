@@ -27,12 +27,12 @@ const ticketDemos = [
     type: 'image',
     style: {
       colors: {
-        titleColor: 'rgba(255, 255, 255, 0.9)',
-        detailColor: 'rgba(255, 255, 255, 0.8)',
-        buttonBackgroundColor: 'rgba(255, 255, 255, 0.2)',
-        buttonBackgroundHoverColor: 'rgba(255, 255, 255, 0.3)',
-        buttonTextColor: 'rgba(255, 255, 255, 0.8)',
-        ticketBackground: '#459ec0'
+        titleColor: '#005CAC',
+        detailColor: 'rgba(0, 0, 0, 1)',
+        buttonBackgroundColor: 'rgb(180, 211, 238, 0.6)',
+        buttonBackgroundHoverColor: 'rgb(126, 187, 240, 0.7)',
+        buttonTextColor: 'rgba(7, 89, 160, 0.98)',
+        ticketBackground: '#fefefe'
       }, 
       image: MonetGif,
       gutterLeft: true,
@@ -51,8 +51,8 @@ const ticketDemos = [
       colors: {
         titleColor: 'rgb(60, 95, 163)',
         detailColor: 'rgba(255, 255, 255, 0.8)',
-        buttonBackgroundColor: 'rgba(87, 144, 255, 0.35)',
-        buttonBackgroundHoverColor: 'rgba(87, 144, 255, 0.5)',
+        buttonBackgroundColor: 'rgb(179, 198, 233, 0.6)',
+        buttonBackgroundHoverColor: 'rgb(132, 166, 229, 0.7)',
         buttonTextColor: '#3050C5'
       }, 
       image: PoplineGif,

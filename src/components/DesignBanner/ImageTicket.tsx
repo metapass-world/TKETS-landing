@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       height: '220px',
-      background: (props: TicketProps) => `linear-gradient(90deg, rgba(255,255,255,0) 50%, rgba(255,255,255,0.35) 100%), url("${props.style.image}")`,
+      background: (props: TicketProps) => `linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), url("${props.style.image}")`,
     },
   },
   buttonRoot: {
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   gutterBackground: {
     background: (props: TicketProps) => {
       const ticketBackground = props.style.colors.ticketBackground ? props.style.colors.ticketBackground : '#fff';
-      return `linear-gradient(90deg, rgba(255,255,255,0) 90%, ${ticketBackground} 100%), url("${props.style.image}")`
+      return `linear-gradient(90deg, rgba(255,255,255,0) 30%, ${ticketBackground} 100%), url("${props.style.image}")`
     },
   },
   detailsBody: {
