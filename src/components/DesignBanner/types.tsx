@@ -1,10 +1,17 @@
+export interface RGBA {
+  red: number;
+  blue: number;
+  green: number;
+  alpha: number;
+}
+
 export interface TicketColors {
-  titleColor: string;
-  detailColor: string;
-  buttonBackgroundColor: string;
-  buttonBackgroundHoverColor: string;
-  buttonTextColor: string;
-  ticketBackground?: string;
+  titleColor: RGBA;
+  detailColor: RGBA;
+  buttonBackgroundColor: RGBA;
+  buttonBackgroundHoverColor: RGBA;
+  buttonTextColor: RGBA;
+  ticketBackground?: RGBA;
 }
 
 export interface ImageTicketStyleProps {

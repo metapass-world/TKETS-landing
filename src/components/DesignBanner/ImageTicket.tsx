@@ -8,8 +8,12 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import LocalActivityIcon from '@material-ui/icons/LocalActivity';
-import { TicketColors, TicketMetadata, ImageTicketStyleProps } from './types'
+import { TicketColors, TicketMetadata, ImageTicketStyleProps, RGBA } from './types'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+
+const toColor = (rgba: RGBA) => {
+  return `rgba(${rgba.red}, ${rgba.green}, ${rgba.blue}, ${rgba.alpha})`
+}
 
 const useStyles = makeStyles((theme) => ({
   ticketWrapper: {
@@ -29,35 +33,41 @@ const useStyles = makeStyles((theme) => ({
         if (props.style.fullWidthBackground) {
           return `linear-gradient(90deg, rgba(255,255,255,0) 50%, rgba(255,255,255,0.35) 100%), url("${props.style.image}")`;
         }
-        const ticketBackground = props.style.colors.ticketBackground ? props.style.colors.ticketBackground : '#fff';
+        const ticketBackground = props.style.colors.ticketBackground ? toColor(props.style.colors.ticketBackground) : '#fff';
         return `${ticketBackground}`;
       },
     },
     [theme.breakpoints.down('xs')]: {
       height: '220px',
-      background: (props: TicketProps) => `linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%), url("${props.style.image}")`,
+      background: (props: TicketProps) => {
+        if (props.style.fullWidthBackground) {
+          return `linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 50%), url("${props.style.image}")`;
+        }
+        const ticketBackground = props.style.colors.ticketBackground ? toColor(props.style.colors.ticketBackground) : '#fff';
+        return `linear-gradient(90deg, ${ticketBackground} 20%, rgba(255,255,255,0) 120%), url("${props.style.image}")`;
+      },
     },
   },
   buttonRoot: {
-    color: (props: TicketProps) => props.style.colors.buttonTextColor,
-    backgroundColor: (props: TicketProps) => props.style.colors.buttonBackgroundColor,
+    color: (props: TicketProps) => toColor(props.style.colors.buttonTextColor),
+    backgroundColor: (props: TicketProps) => toColor(props.style.colors.buttonBackgroundColor),
     fontWeight: 600,
     marginLeft: 10,
     '&:hover': {
-      backgroundColor: (props: TicketProps) => props.style.colors.buttonBackgroundHoverColor,
+      backgroundColor: (props: TicketProps) => toColor(props.style.colors.buttonBackgroundHoverColor),
     },
   },
   gutterBackground: {
     background: (props: TicketProps) => {
-      const ticketBackground = props.style.colors.ticketBackground ? props.style.colors.ticketBackground : '#fff';
+      const ticketBackground = props.style.colors.ticketBackground ? toColor(props.style.colors.ticketBackground) : '#fff';
       return `linear-gradient(90deg, rgba(255,255,255,0) 30%, ${ticketBackground} 110%), url("${props.style.image}")`
     },
   },
   detailsBody: {
-    color: (props: TicketProps) => props.style.colors.detailColor
+    color: (props: TicketProps) => toColor(props.style.colors.detailColor)
   },
   titleBody: {
-    color: (props: TicketProps) => props.style.colors.titleColor, 
+    color: (props: TicketProps) => toColor(props.style.colors.titleColor), 
     fontWeight: 600
   }
 }));
@@ -127,7 +137,7 @@ function ImageTicket(props: TicketProps) {
                       </Box>
                       <Box alignSelf="flex-end">
                         <IconButton aria-label="more">
-                          <MoreVertIcon style={{color: props.style.colors.detailColor}} />
+                          <MoreVertIcon style={{color: toColor(props.style.colors.detailColor)}} />
                         </IconButton>
                         <Button variant="contained" disableElevation className={classes.buttonRoot}>
                           Check In
@@ -175,7 +185,7 @@ function ImageTicket(props: TicketProps) {
                       </Box>
                       <Box alignSelf="flex-end">
                         <IconButton aria-label="more">
-                          <MoreVertIcon style={{color: props.style.colors.detailColor}} />
+                          <MoreVertIcon style={{color: toColor(props.style.colors.detailColor)}} />
                         </IconButton>
                         <Button variant="contained" disableElevation className={classes.buttonRoot}>
                           Check In
