@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import LocalActivityIcon from '@material-ui/icons/LocalActivity';
-import { TicketColors, TicketMetadata, ImageTicketStyleProps, RGBA } from './types'
+import { TicketMetadata, ImageTicketStyleProps, RGBA } from './types'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const toColor = (rgba: RGBA) => {
@@ -86,7 +86,6 @@ function ImageTicket(props: TicketProps) {
   const xs = useMediaQuery(theme.breakpoints.down('xs'));
 
   const { style, metadata } = props
-  console.log(props)
   const classes = useStyles(props)
   const [springProps, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 10, tension: 350, friction: 100 } }))
 

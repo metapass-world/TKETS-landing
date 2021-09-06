@@ -1,13 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React from 'react'
 import BackgroundImage from './title_bg.png';
 import BackgroundImageSM from './title_bg_sm.png';
 import TitleMockup1 from './title_mockup_1.png';
 import TitleMockup2 from './title_mockup_2.png';
 import './index.css';
 import Box from '@material-ui/core/Box';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { Hidden, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 import { TextLoop } from "react-text-loop-next";
 import { useSpring, animated } from 'react-spring'
 

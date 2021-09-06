@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Margin from '../../hooks'
 import Box from '@material-ui/core/Box'
 import Typography from '@material-ui/core/Typography'
+import TextField from '@material-ui/core/TextField'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -10,27 +11,45 @@ import StarwarsGif from './starwars.gif'
 import PoplineGif from './popline.gif'
 import MonetGif from './monet.gif'
 import BackgroundImage from './banner_bg.png';
+import IPFSImage from './ipfs.png'
+import MediaImage from './media.png'
+import CollectibleImage from './collectible.png'
+import Button from '@material-ui/core/Button'
+import axios from 'axios'
+import Alert from '@material-ui/lab/Alert';
+import AlertTitle from '@material-ui/lab/AlertTitle';
+import IconButton from '@material-ui/core/IconButton';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
 
 const useStyles = makeStyles((theme) => ({
   titleTextBox: {
     backgroundRepeat: 'no-repeat',
-    [theme.breakpoints.up('md')]: {
-      backgroundImage: `url(${BackgroundImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    },
-    [theme.breakpoints.between('sm','md')]: {
-      backgroundImage: `url(${BackgroundImage})`,
-      backgroundSize: 'contain',
-      backgroundPosition: 'top',
-    },
+    background: `linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.8) 80%), url(${BackgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'top',
     transition: 'box-shadow 0.5s',
     willChange: 'transform'
   },
   boxBody : {
     color: '#616161',
+  },
+  emailFormTextSize:{
+    fontSize:50
+  },
+  subscribeButton: {
+    color: '#fff',
+    backgroundColor: 'rgba(71, 160, 249, 0.5)',
+    '&:hover': {
+      backgroundColor: 'rgba(71, 160, 249, 0.9)',
+    },
   }
 }));
+
+const NEWSLETTER_URL = "https://f027c022.sibforms.com/serve/MUIEAGseA6FOM3_Gk8nXhu13oV6C1jwm9FIzJD3VVf4dunDIL-Vz7ebEbAHmXSog8qBswdPG6gDtgvz-y8nJZYZI37zyPNXITy6x1_Nfy9h3aTjzfr9leb9yl7_K54pk1Bv8uS3mX62sWk3FxhdxnER5H7dFxWe_Appeok7h9fy8UV_rbOcJNyVK6q6quGEwc6aQe93gMUKe9uoh"
 
 const ticketDemos = [
   {
@@ -179,31 +198,68 @@ const ticketDemos = [
   },
 ] as TicketProps[]
 
+const validateEmail = (email : string) => {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
 function DesignBanner() {
   const classes = useStyles();
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.down('sm'));
   const xs = useMediaQuery(theme.breakpoints.down('xs'));
-
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [attributionOpen, setAttributionOpen] = useState(false)
   return (
     <Box className={ classes.titleTextBox }>
       <Margin>
         <Box >
           <Grid container spacing={sm ? 1 : 5}>
             <Grid item xs={12} lg={4} xl={5}>
-              <Box>
-                <Typography variant="h3" align='left' style={{color: '#424242', fontWeight: 600}} gutterBottom>Engage your audience with custom NFTs</Typography>
-                <Typography className={classes.boxBody} variant="h6" style={{fontWeight: 400}} >
-                  Embed images, GIFs or audio files
-                </Typography>
-                <Typography className={classes.boxBody} variant="h6" style={{fontWeight: 500}} >
-                  No service fees
-                </Typography>
-                <Typography className={classes.boxBody} variant="h6" style={{fontWeight: 500}} >
-                  No payment processing fees
-                </Typography>
-              </Box>
-              
+              <Typography variant="h3" align='left' style={{color: '#424242', fontWeight: 600}} gutterBottom>Engage your audience with custom NFTs</Typography>
+              <Grid container spacing={3} component={Box} py={3}>
+                <Grid item xs={12}>
+                  <Box display="flex" alignItems="center">
+                    <Box>
+                      <img src={CollectibleImage} width={50} alt="collectible"/>
+                    </Box>
+                    <Box ml={2}>
+                      <Typography variant="h6" align='left' style={{color: '#424242', fontWeight: 500}} gutterBottom>Create highly collectible experiences</Typography>
+                      <Typography className={classes.boxBody} variant="body1" gutterBottom>
+                        Collect, trade all your NFT tickets, or simply keep them as a one-of-a-kind memorabilia for your experiences.
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box display="flex" alignItems="center">
+                    <Box>
+                      <img src={MediaImage} width={50} alt="media formats"/>
+                    </Box>
+                    <Box ml={2}>
+                      <Typography variant="h6" align='left' style={{color: '#424242', fontWeight: 500}} gutterBottom>Support for multiple media types</Typography>
+                      <Typography className={classes.boxBody} variant="body1" gutterBottom>
+                        Embed images, GIFs, audio and more into your tickets.
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box display="flex" alignItems="center">
+                    <Box>
+                      <img src={IPFSImage} width={50} alt="IPFS"/>
+                    </Box>
+                    <Box ml={2}>
+                      <Typography variant="h6" align='left' style={{color: '#424242', fontWeight: 500}} gutterBottom>Decentralised storage</Typography>
+                      <Typography className={classes.boxBody} variant="body1" gutterBottom>
+                        Stored on IPFS, making your NFT media always available and immutable. Once THETA Edge Storage is released, we will also implement support for that.
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+              </Grid>
             </Grid>
             <Grid item xs={12} lg={8} xl={7}>
               <Grid container spacing={sm ? 2 : 4} style={{paddingLeft: sm ? 0 : 50, paddingRight: sm ? 0 : 50}}>
@@ -215,6 +271,104 @@ function DesignBanner() {
               </Grid>
             </Grid>
           </Grid>
+        </Box>
+      </Margin>
+      <Margin>
+        <Box mt={2}>
+          <Typography variant="h3" align='center' style={{color: '#424242', fontWeight: 600}} gutterBottom>Sign up to our newsletter</Typography>
+          <Typography variant="h5" align='center' style={{color: '#424242', fontWeight: 400}} gutterBottom>or contact us at <a href="mailto:hello@tkets.io" style={{color: '#29A6F9', textDecoration: 'none'}}>hello@tkets.io</a></Typography>
+          <Grid container spacing={3} component={Box} pt={3}>
+            <Grid md={2} />
+            <Grid item xs={12} md={8}>
+              <form id="sib-form" method="POST" action={NEWSLETTER_URL}
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    if (!validateEmail(email)) {
+                      setError(true);
+                    } else {
+                      var bodyFormData = new FormData();
+                      bodyFormData.append('EMAIL', email);
+                      bodyFormData.append('OPT_IN', '1');
+                      axios.post(
+                        NEWSLETTER_URL, 
+                        bodyFormData, 
+                        {
+                          headers: { 'content-type': undefined }
+                        }
+                      ).finally(() => {
+                        setSuccess(true)
+                      })
+                    }
+                  }}>
+                <Box display="flex">
+                  <TextField 
+                    type="text" 
+                    id="EMAIL" 
+                    name="EMAIL"
+                    placeholder="Your email address" 
+                    variant="outlined" 
+                    fullWidth={true} 
+                    inputProps={{style: {fontSize: xs ? 20 : 40}}} 
+                    value={email} 
+                    onChange={(event) => {
+                      setError(false); 
+                      setSuccess(false);
+                      setEmail(event.target.value);
+                    }}
+                    error={error}/>
+                  <Box ml={xs ? 1 : 3} alignItems="center" display="flex">
+                    <Button className={classes.subscribeButton} variant="contained" style={{fontSize: xs ? 20 : 30}} disableElevation={true} type="submit">
+                      Subscribe
+                    </Button>
+                  </Box>
+                  
+                  
+                </Box>
+              </form>
+              {
+                success && <Box mt={3}>
+                  <Alert severity="success">
+                    <AlertTitle>Success!</AlertTitle>
+                    Thank you for signing up! Be sure to support us on the ongoing Theta Network Q3 2021 Hackthon too!
+                  </Alert>
+                </Box>
+              }
+            </Grid>
+          </Grid>
+        </Box>
+        <Box mt={5}>
+          <Box display="flex" justifyContent="center">
+            <Box>
+              <IconButton aria-label="twitter" href="https://twitter.com/TKETS_io" target="_blank">
+                <TwitterIcon fontSize="large" />
+              </IconButton>
+            </Box>
+            <Box ml={2}>
+              <IconButton aria-label="github" href="https://github.com/tkets-io" target="_blank">
+                <GitHubIcon fontSize="large" />
+              </IconButton>
+            </Box>
+          </Box>
+          <Box mt={5}>
+            <Typography variant="subtitle1" align='center' style={{color: '#424242'}} gutterBottom>&copy; 2021, TKETS.io. All rights reserved.</Typography>
+            <Typography variant="subtitle1" align='center' style={{color: '#424242'}} gutterBottom><a href="javascript:void(0)" onClick={() => setAttributionOpen(true)}>Attributions</a></Typography>
+            <Dialog onClose={() => setAttributionOpen(false)} aria-labelledby="customized-dialog-title" open={attributionOpen}>
+              <DialogTitle id="customized-dialog-title">
+                Attributions
+              </DialogTitle>
+              <DialogContent dividers>
+                <Typography gutterBottom>
+                  <a href="https://www.pinterest.com/pin/315885361345504104/">Drake GIFs from the 6</a><br/>
+                  <a href="https://www.artstation.com/artwork/1n5aJK">Galaxy Far Far Away</a><br/>
+                  <a href="https://www.pinterest.com/pin/466896686350034574/">Famous Artist Animated Painting Gifs</a><br/>
+                  <a href="https://musichistoryingifs.com/post/34300769261/2010-kanye-west-releases-my-beautiful-dark">music history in gifs</a><br/>
+                  <a href="https://www.freepik.com/vectors/technology">Technology vector created by vectorpouch - www.freepik.com</a><br/>
+                  <a href="https://media.pitchfork.com/photos/5d656b501ce1350009a5d8e3/1:1/w_320/bigthief_twohands.jpg">Big Thief Two Hands Album Art</a>
+                </Typography>
+              </DialogContent>
+            </Dialog>
+          </Box>
+          
         </Box>
       </Margin>
     </Box>

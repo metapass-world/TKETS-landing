@@ -80,7 +80,7 @@ function PricingCalculatorCostsDialog(props: {open: boolean, handleClose: () => 
           </TableContainer>
           <Box mx={2} mt={1}>
             <Typography variant="caption" gutterBottom>
-              *The TFUEL cost estimations are based on the latest current implementations of our smart contracts, and may be subject to change in the future.
+              *The TFUEL cost estimations are based on the current TFUEL price and the latest implementations of our smart contracts, and may be subject to change in the future.
             </Typography>
           </Box>
         </DialogContent>
@@ -106,8 +106,6 @@ function PricingCalculatorSummary(props: {data: ComparisonData | undefined}) {
   };
 
   const { data } = props
-
-  console.log(data)
 
   return <Box>
     <PricingCalculatorCostsDialog open={open} handleClose={handleClose} data={data}/>

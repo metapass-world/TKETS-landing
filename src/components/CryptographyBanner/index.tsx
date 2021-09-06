@@ -28,7 +28,7 @@ function CryptographyBanner() {
           <Grid container spacing={5}>
             <Grid item xs={12} sm={12} md={6} lg={6}>
               <Box pt={sm ? 0 : 5}>
-                <img src={BackgroundImage} width="100%"/>
+                <img src={BackgroundImage} width="100%" alt="banner"/>
               </Box>
               
             </Grid>

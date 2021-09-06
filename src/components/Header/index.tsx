@@ -7,7 +7,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { ReactComponent as Logo } from './logo_flat_color.svg';
 import { ReactComponent as LogoSmall } from './logo_flat_color_small.svg';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Slide from '@material-ui/core/Slide';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,8 +36,18 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 'auto',
     paddingLeft: 30,
     paddingRight: 30
+  },
+  webappButton: {
+    fontSize: '12pt',
+    color: 'rgba(238, 31, 155, 0.8)',
+    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+    fontWeight: 600,
+    paddingLeft: 15,
+    paddingRight: 15,
+    '&:hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.7)',
+    },
   }
-
 }));
 
 function Header() {
@@ -61,6 +71,9 @@ function Header() {
                 {
                   lg ? <Logo height={30}/> : <LogoSmall height={30}/>
                 }
+              </Box>
+              <Box className={classes.headerEnd}>
+                <Button className={classes.webappButton}>Coming soon</Button>
               </Box>
             </Box>
         </Toolbar>

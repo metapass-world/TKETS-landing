@@ -159,8 +159,6 @@ const PriceComparisonTabs = [
 
 function PricingBanner() {
   const classes = useStyles();
-  const theme = useTheme();
-  const sm = useMediaQuery(theme.breakpoints.down('sm'));
 
   const [ticketData, setTicketData] = useState([defaultTicketData] as PricingCalculatorData[]);
   const [requireStamping, setRequireStamping] = useState(false);

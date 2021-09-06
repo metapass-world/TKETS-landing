@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper'
 import BackgroundImage from './banner_bg.png';
 import BackgroundImageSM from './banner_bg_sm.png';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
