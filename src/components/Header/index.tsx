@@ -19,19 +19,6 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: 30,
     paddingRight: 30
   },
-  headerTabs: {
-    [theme.breakpoints.up('lg')]: {
-      position: 'fixed',
-      left: 0, 
-      right: 0,
-    },
-    [theme.breakpoints.down('sm')]: {
-      position: 'fixed',
-      bottom: 20,
-      left: 0, 
-      right: 0,
-    },
-  },
   headerEnd: {
     marginLeft: 'auto',
     paddingLeft: 30,

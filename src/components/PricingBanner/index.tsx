@@ -32,7 +32,7 @@ const calculateTKETSFees = (ticketData: PricingCalculatorData[], passCostsOn: bo
   for (const ticketType of ticketData) {
     ticketMintingFees += ticketType.numberOfTicketsSold * ticketMintFeePerTicket;
     if (requireStamping) {
-      stampingCosts += ticketType.numberOfTicketsSold * ticketMintFeePerTicket;
+      stampingCosts += ticketType.numberOfTicketsSold * ticketStampFeePerTicket;
     }
     if (passCostsOn) {
       actualTicketPrices.push(ticketType.pricePerTicket + ticketMintFeePerTicket + (requireStamping ? ticketStampFeePerTicket : 0) + fixedCostsPerTicket)
