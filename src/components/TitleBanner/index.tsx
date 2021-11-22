@@ -1,8 +1,4 @@
 import React from 'react'
-import BackgroundImage from './title_bg.png';
-import BackgroundImageSM from './title_bg_sm.png';
-import TitleMockup1 from './title_mockup_1.png';
-import TitleMockup2 from './title_mockup_2.png';
 import './index.css';
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   titleTextBox: {
     backgroundRepeat: 'no-repeat',
     [theme.breakpoints.up('lg')]: {
-      backgroundImage: `url(${BackgroundImage})`,
+      backgroundImage: `url(https://tkets-io.s3.us-east-2.amazonaws.com/static/title_bg.png)`,
       paddingTop: '40vh',
       paddingBottom: '20vh',
       paddingLeft: '10%',
@@ -21,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundPosition: 'right',
     },
     [theme.breakpoints.only('md')]: {
-      backgroundImage: `url(${BackgroundImage})`,
+      backgroundImage: `url(https://tkets-io.s3.us-east-2.amazonaws.com/static/title_bg.png)`,
       paddingTop: '40vh',
       paddingBottom: '20vh',
       paddingLeft: 70,
@@ -29,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundPosition: 'right',
     },
     [theme.breakpoints.down('sm')]: {
-      backgroundImage: `url(${BackgroundImage})`,
+      backgroundImage: `url(https://tkets-io.s3.us-east-2.amazonaws.com/static/title_bg.png)`,
       paddingTop: 'calc(150px + 50%)',
       paddingBottom: '10%',
       paddingLeft: 50,
@@ -37,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundPosition: 'top',
     },
     [theme.breakpoints.down('xs')]: {
-      backgroundImage: `url(${BackgroundImageSM})`,
+      backgroundImage: `url(https://tkets-io.s3.us-east-2.amazonaws.com/static/title_bg_sm.png)`,
       paddingTop: 'calc(150px + 50%)',
       paddingBottom: '10%',
       paddingLeft: 30,
@@ -163,11 +159,11 @@ function TitleBanner() {
       </Box>
       <Box>
         <animated.img 
-          src={TitleMockup1} alt="Mockup 1" className={classes.imageMockup1} 
+          src="https://tkets-io.s3.us-east-2.amazonaws.com/static/title_mockup_1.png" alt="Mockup 1" className={classes.imageMockup1} 
           onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
           onMouseLeave={() => set({ xys: [0, 0, 1] })}
           style={{ transform: props.xys.to(trans) }}/>
-        <animated.img src={TitleMockup2} alt="Mockup 2" className={classes.imageMockup2}
+        <animated.img src="https://tkets-io.s3.us-east-2.amazonaws.com/static/title_mockup_2.png" alt="Mockup 2" className={classes.imageMockup2}
           onMouseMove={({ clientX: x, clientY: y }) => set2({ xys: calc2(x, y) })}
           onMouseLeave={() => set2({ xys: [0, 0, 1] })}
           style={{ transform: props2.xys.to(trans) }}/>

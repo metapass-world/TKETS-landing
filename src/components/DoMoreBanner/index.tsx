@@ -5,8 +5,6 @@ import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import BackgroundImage from './banner_bg.png';
-import BackgroundImageSM from './banner_bg_sm.png';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
@@ -16,19 +14,19 @@ const useStyles = makeStyles((theme) => ({
   titleTextBox: {
     backgroundRepeat: 'no-repeat',
     [theme.breakpoints.up('md')]: {
-      backgroundImage: `url(${BackgroundImage})`,
+      backgroundImage: `url(https://tkets-io.s3.us-east-2.amazonaws.com/static/do_more_banner_bg.png)`,
       paddingTop: 200,
       backgroundSize: 'cover',
       backgroundPosition: 'top',
     },
     [theme.breakpoints.between('sm','md')]: {
-      backgroundImage: `url(${BackgroundImage})`,
+      backgroundImage: `url(https://tkets-io.s3.us-east-2.amazonaws.com/static/do_more_banner_bg.png)`,
       paddingTop: 100,
       backgroundSize: 'contain',
       backgroundPosition: 'center',
     },
     [theme.breakpoints.down('xs')]: {
-      backgroundImage: `url(${BackgroundImageSM})`,
+      backgroundImage: `url(https://tkets-io.s3.us-east-2.amazonaws.com/static/banner_bg_sm.png)`,
       paddingTop: 100,
       backgroundSize: 'contain',
       backgroundPosition: 'center',

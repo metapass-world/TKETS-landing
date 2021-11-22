@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import BackgroundImage from './banner_bg.png';
 
 const useStyles = makeStyles((theme) => ({
   titleTextBox: {
@@ -28,7 +27,7 @@ function CryptographyBanner() {
           <Grid container spacing={5}>
             <Grid item xs={12} sm={12} md={6} lg={6}>
               <Box pt={sm ? 0 : 5}>
-                <img src={BackgroundImage} width="100%" alt="banner"/>
+                <img src={"https://tkets-io.s3.us-east-2.amazonaws.com/static/banner_bg_crypto.png"} width="100%" alt="banner"/>
               </Box>
               
             </Grid>

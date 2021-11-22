@@ -7,13 +7,6 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import ImageTicket, { TicketProps } from './ImageTicket';
-import StarwarsGif from './starwars.gif'
-import PoplineGif from './popline.gif'
-import MonetGif from './monet.gif'
-import BackgroundImage from './banner_bg.png';
-import IPFSImage from './ipfs.png'
-import MediaImage from './media.png'
-import CollectibleImage from './collectible.png'
 import Button from '@material-ui/core/Button'
 import axios from 'axios'
 import Alert from '@material-ui/lab/Alert';
@@ -28,7 +21,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 const useStyles = makeStyles((theme) => ({
   titleTextBox: {
     backgroundRepeat: 'no-repeat',
-    background: `linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.8) 80%), url(${BackgroundImage})`,
+    background: `linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.8) 80%), url(https://tkets-io.s3.us-east-2.amazonaws.com/static/design_banner_bg.png)`,
     backgroundSize: 'cover',
     backgroundPosition: 'top',
     transition: 'box-shadow 0.5s',
@@ -93,7 +86,7 @@ const ticketDemos = [
           alpha: 1
         }
       }, 
-      image: MonetGif,
+      image: 'https://tkets-io.s3.us-east-2.amazonaws.com/static/monet.gif',
       gutterLeft: true,
       fullWidthBackground: false  
     },
@@ -139,7 +132,7 @@ const ticketDemos = [
           alpha: 1
         }
       }, 
-      image: PoplineGif,
+      image: 'https://tkets-io.s3.us-east-2.amazonaws.com/static/popline.gif',
       gutterLeft: true,
       fullWidthBackground: true
     },
@@ -185,7 +178,7 @@ const ticketDemos = [
           alpha: 0.95
         }
       }, 
-      image: StarwarsGif,
+      image: 'https://tkets-io.s3.us-east-2.amazonaws.com/static/starwars.gif',
       gutterLeft: false,
       fullWidthBackground: true  
     },
@@ -223,7 +216,7 @@ function DesignBanner() {
                 <Grid item xs={12}>
                   <Box display="flex" alignItems="center">
                     <Box>
-                      <img src={CollectibleImage} width={50} alt="collectible"/>
+                      <img src={'https://tkets-io.s3.us-east-2.amazonaws.com/static/collectible.png'} width={50} alt="collectible"/>
                     </Box>
                     <Box ml={2}>
                       <Typography variant="h6" align='left' style={{color: '#424242', fontWeight: 500}} gutterBottom>Create highly collectible experiences</Typography>
@@ -236,7 +229,7 @@ function DesignBanner() {
                 <Grid item xs={12}>
                   <Box display="flex" alignItems="center">
                     <Box>
-                      <img src={MediaImage} width={50} alt="media formats"/>
+                      <img src={'https://tkets-io.s3.us-east-2.amazonaws.com/static/media.png'} width={50} alt="media formats"/>
                     </Box>
                     <Box ml={2}>
                       <Typography variant="h6" align='left' style={{color: '#424242', fontWeight: 500}} gutterBottom>Support for multiple media types</Typography>
@@ -249,7 +242,7 @@ function DesignBanner() {
                 <Grid item xs={12}>
                   <Box display="flex" alignItems="center">
                     <Box>
-                      <img src={IPFSImage} width={50} alt="IPFS"/>
+                      <img src={'https://tkets-io.s3.us-east-2.amazonaws.com/static/ipfs.png'} width={50} alt="IPFS"/>
                     </Box>
                     <Box ml={2}>
                       <Typography variant="h6" align='left' style={{color: '#424242', fontWeight: 500}} gutterBottom>Decentralised storage</Typography>

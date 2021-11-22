@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Gilroy';
   src: local('Gilroy-UltraLight'), url(./fonts/Gilroy-UltraLight.otf) format('opentype');
   font-weight: 100;
@@ -88,7 +88,7 @@
   src: local('Gilroy-ExtraBoldItalic'), url(./fonts/Gilroy-ExtraboldItalic.otf) format('opentype');
   font-weight: 800;
   font-style: italic;
-}
+} */
 
 body {
   margin: 0;
