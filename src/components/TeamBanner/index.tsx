@@ -76,7 +76,7 @@ function TeamBanner() {
                 </Box>
                 <Typography variant="h6" align='center' style={{fontWeight: 500}} gutterBottom>Kevin Katona</Typography>
                 <Typography className={classes.boxBody} variant="button" gutterBottom style={{fontWeight: 800, color: '#359ec6'}}>
-                  VP Product
+                  CPO/CMO
                 </Typography>
                 <Typography className={classes.boxBody} variant="body1" gutterBottom>
                   3+ Years Founder Experience, 2+ Years Microsoft R&amp;D, 4+ Years Game Development
