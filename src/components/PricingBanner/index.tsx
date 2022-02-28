@@ -130,7 +130,7 @@ const eventSitesToCompare = [
   {
     name: 'TicketTailor', 
     serviceFlatFeePerTicket: 0.65,
-    servicePercentFeePerTicket: 0.00,
+    servicePercentFeePerTicket: 0.03,
     maxFeePerTicket: undefined
   }, 
   {
@@ -147,8 +147,8 @@ const eventSitesToCompare = [
   },
   {
     name: 'Universe', 
-    serviceFlatFeePerTicket: 0.79,
-    servicePercentFeePerTicket: 0.02,
+    serviceFlatFeePerTicket: 1.99,
+    servicePercentFeePerTicket: 0.025,
     maxFeePerTicket: 19.95
   }
 ]
@@ -182,7 +182,7 @@ function PricingBanner() {
     if (tfuelPrice) {
       var newComparisonData = []
       const estimatedTKETSFee = calculateTKETSFees(ticketData, passCostsOn, requireStamping, tfuelPrice)
-      newComparisonData.push({name: 'TKETS', data: estimatedTKETSFee})
+      newComparisonData.push({name: 'Metapass', data: estimatedTKETSFee})
       
       for (const eventSite of eventSitesToCompare) {
         if ((eventSite.name === 'Eventbrite Essential' && ticketData.length > 1) || (eventSite.name === 'Eventbrite Professional' && ticketData.length === 1)) {
@@ -218,7 +218,7 @@ function PricingBanner() {
               </Box>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={6}>
-              <PricingCalculatorSummary data={comparisonData.find(e => e.name === 'TKETS')}/>
+              <PricingCalculatorSummary data={comparisonData.find(e => e.name === 'Metapass')}/>
               <Box py={3} display="flex" alignItems="center" justifyContent="center">
                 <Tabs
                   classes={useTabStyle}

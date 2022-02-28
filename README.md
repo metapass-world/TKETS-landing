@@ -1,8 +1,8 @@
 # TKETS Landing
 
-[TKETS](https://tkets.io/) is a permissionless, decentralised NFT ticketing platform.
+[Metapass](https://metapass.world/) is a permissionless, decentralised NFT ticketing platform.
 
-This is the code for the landing page UI for TKETS. Further documentation will be released soon.
+This is the code for the landing page UI for Metapass. Further documentation will be released soon.
 
 ## Running locally
 

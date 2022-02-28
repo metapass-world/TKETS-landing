@@ -269,7 +269,7 @@ function DesignBanner() {
       <Margin>
         <Box mt={2}>
           <Typography variant="h3" align='center' style={{color: '#424242', fontWeight: 600}} gutterBottom>Sign up to our newsletter</Typography>
-          <Typography variant="h5" align='center' style={{color: '#424242', fontWeight: 400}} gutterBottom>or contact us at <a href="mailto:hello@tkets.io" style={{color: '#29A6F9', textDecoration: 'none'}}>hello@tkets.io</a></Typography>
+          <Typography variant="h5" align='center' style={{color: '#424242', fontWeight: 400}} gutterBottom>or contact us at <a href="mailto:hello@metapass.world" style={{color: '#29A6F9', textDecoration: 'none'}}>hello@metapass.world</a></Typography>
           <Grid container spacing={3} component={Box} pt={3}>
             <Grid md={2} />
             <Grid item xs={12} md={8}>
@@ -343,7 +343,7 @@ function DesignBanner() {
             </Box>
           </Box>
           <Box mt={5}>
-            <Typography variant="subtitle1" align='center' style={{color: '#424242'}} gutterBottom>&copy; 2021, TKETS.io. All rights reserved.</Typography>
+            <Typography variant="subtitle1" align='center' style={{color: '#424242'}} gutterBottom>&copy; 2022, Metapass. All rights reserved.</Typography>
             <Typography variant="subtitle1" align='center' style={{color: '#424242'}} gutterBottom><a href="javascript:void(0)" onClick={() => setAttributionOpen(true)}>Attributions</a></Typography>
             <Dialog onClose={() => setAttributionOpen(false)} aria-labelledby="customized-dialog-title" open={attributionOpen}>
               <DialogTitle id="customized-dialog-title">

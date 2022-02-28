@@ -32,18 +32,19 @@ function PriceComparisonChart(props: {comparisonData: ComparisonData[], showPayo
     seriesField: '',
     color: function color(_ref: any) {
       var type = _ref.type;
-      if (type === 'TKETS') {
+      if (type === 'Metapass') {
         return TKETScolor;
       }
       return generic;
     },
     label: {
+      position: showPayoutGraph ? 'middle' : 'right',
       content: function content(originData: any) {
         var val = parseFloat(originData.value);
         return '$' + (val).toFixed(2);
       },
       style:{
-        fontWeight: 600,
+        fontWeight: 700,
       }
     },
     legend: false,
