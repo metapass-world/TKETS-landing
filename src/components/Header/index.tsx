@@ -60,7 +60,7 @@ function Header() {
                 }
               </Box>
               <Box className={classes.headerEnd}>
-                <Button className={classes.webappButton} href="https://beta.tkets.io" target="_blank">Try our beta now!</Button>
+                <Button className={classes.webappButton} href="https://beta.metapass.world" target="_blank">Try our beta now!</Button>
               </Box>
             </Box>
         </Toolbar>
