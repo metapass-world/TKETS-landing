@@ -332,7 +332,7 @@ function DesignBanner() {
         <Box mt={5}>
           <Box display="flex" justifyContent="center">
             <Box>
-              <IconButton aria-label="twitter" href="https://twitter.com/TKETS_io" target="_blank">
+              <IconButton aria-label="twitter" href="https://twitter.com/metapass_world" target="_blank">
                 <TwitterIcon fontSize="large" />
               </IconButton>
             </Box>
