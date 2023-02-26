@@ -41,7 +41,7 @@ function TeamBanner() {
         </Box>
         <Box mt={sm ? 5 : 10} color='#424242' maxWidth={1000} style={{margin: 'auto'}}>
           <Grid container spacing={5}>
-            <Grid item xs={12} sm={6} md={4} lg={4}>
+            {/* <Grid item xs={12} sm={6} md={4} lg={4}>
               <Box p={4} alignItems="center" justifyContent="center" display="flex" flexDirection="column">
                 <Box pb={3}>
                   <Avatar alt="Peter Brown" src="https://tkets-io.s3.us-east-2.amazonaws.com/static/peter.jpg" style={{width: 96, height: 96}}/>
@@ -60,26 +60,21 @@ function TeamBanner() {
                         <LinkedInIcon />
                       </IconButton>
                     </Grid>
-                    {/* <Grid item>
-                      <IconButton>
-                        <TwitterIcon />
-                      </IconButton>
-                    </Grid> */}
                   </Grid>
                 </Box>
               </Box>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12} sm={6} md={4} lg={4}>
               <Box p={4} alignItems="center" justifyContent="center" display="flex" flexDirection="column">
                 <Box pb={3}>
-                  <Avatar alt="Richard Xiong" src="https://tkets-io.s3.us-east-2.amazonaws.com/static/kevin.jpg" style={{width: 96, height: 96}}/>
+                  <Avatar alt="Kev Katona" src="https://tkets-io.s3.us-east-2.amazonaws.com/static/kevin.jpg" style={{width: 96, height: 96}}/>
                 </Box>
                 <Typography variant="h6" align='center' style={{fontWeight: 500}} gutterBottom>Kevin Katona</Typography>
                 <Typography className={classes.boxBody} variant="button" gutterBottom style={{fontWeight: 800, color: '#359ec6'}}>
-                  CPO/CMO
+                  CEO
                 </Typography>
                 <Typography className={classes.boxBody} variant="body1" gutterBottom>
-                  3+ Years Founder Experience, 2+ Years Microsoft R&amp;D, 4+ Years Game Development
+                  4+ Years Founder Experience, 2+ Years Microsoft R&amp;D, 4+ Years Game Development
                 </Typography>
                 <Box pt={1}>
                   <Grid container spacing={1}>
@@ -107,7 +102,7 @@ function TeamBanner() {
                   CTO
                 </Typography>
                 <Typography className={classes.boxBody} variant="body1" gutterBottom>
-                  3+ Years Software Engineer, 1+ Years Solidity Dev, Multi-Hackathon Winner
+                  4+ Years Software Engineer, 2+ Years Solidity Dev, Multi-Hackathon Winner
                 </Typography>
                 <Box pt={1}>
                   <Grid container spacing={1}>
