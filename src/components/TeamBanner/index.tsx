@@ -64,7 +64,7 @@ function TeamBanner() {
                 </Box>
               </Box>
             </Grid> */}
-            <Grid item xs={12} sm={6} md={4} lg={4}>
+            <Grid item xs={12} sm={6}>
               <Box p={4} alignItems="center" justifyContent="center" display="flex" flexDirection="column">
                 <Box pb={3}>
                   <Avatar alt="Kev Katona" src="https://tkets-io.s3.us-east-2.amazonaws.com/static/kevin.jpg" style={{width: 96, height: 96}}/>
@@ -92,7 +92,7 @@ function TeamBanner() {
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} md={4} lg={4}>
+            <Grid item xs={12} sm={6}>
               <Box p={4} alignItems="center" justifyContent="center" display="flex" flexDirection="column">
                 <Box pb={3}>
                   <Avatar alt="Richard Xiong" src="https://tkets-io.s3.us-east-2.amazonaws.com/static/richard.jpg" style={{width: 96, height: 96}}/>
