@@ -29,6 +29,7 @@ function TeamBanner() {
   const classes = useStyles();
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.down('sm'));
+  const lg = useMediaQuery(theme.breakpoints.up('lg'));
 
   return (
     <Box>
@@ -39,7 +40,7 @@ function TeamBanner() {
             From large multi-day events, to virtual online classes and personal gatherings, we've got you covered on all fronts
           </Typography> */}
         </Box>
-        <Box mt={sm ? 5 : 10} color='#424242' maxWidth={1000} style={{margin: 'auto'}}>
+        <Box px={lg ? 0 : 200} mt={sm ? 5 : 10} color='#424242' maxWidth={1000} style={{margin: 'auto'}}>
           <Grid container spacing={5}>
             {/* <Grid item xs={12} sm={6} md={4} lg={4}>
               <Box p={4} alignItems="center" justifyContent="center" display="flex" flexDirection="column">
