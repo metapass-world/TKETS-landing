@@ -75,7 +75,7 @@ function TeamBanner() {
                   CEO
                 </Typography>
                 <Typography className={classes.boxBody} variant="body1" gutterBottom>
-                  4+ Years Founder Experience, 2+ Years Microsoft R&amp;D, 4+ Years Game Development
+                  9 years Media Platforms &amp; Live Events, 4+ Years Founder Experience, 2+ Years Microsoft R&amp;D, 4+ Years Game Development
                 </Typography>
                 <Box pt={1}>
                   <Grid container spacing={1}>
