@@ -7,7 +7,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { ReactComponent as Logo } from './logo_flat_color.svg';
 import { ReactComponent as LogoSmall } from './logo_flat_color_small.svg';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import { Button } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -59,9 +59,9 @@ function Header() {
                   lg ? <Logo height={30}/> : <LogoSmall height={30}/>
                 }
               </Box>
-              <Box className={classes.headerEnd}>
+              {/* <Box className={classes.headerEnd}>
                 <Button className={classes.webappButton} href="https://beta.metapass.world" target="_blank">Try our beta now!</Button>
-              </Box>
+              </Box> */}
             </Box>
         </Toolbar>
       </AppBar>
