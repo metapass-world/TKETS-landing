@@ -154,7 +154,7 @@ function TitleBanner() {
               <span className={`${classes.textGradient3} gradientText`}>fastest</span>
               <span className={`${classes.textGradient2} gradientText`}>most energy efficient</span>
           </TextLoop><br/>
-          NFT ticketing platform
+          smart ticketing platform
         </h2>
       </Box>
       <Box>
