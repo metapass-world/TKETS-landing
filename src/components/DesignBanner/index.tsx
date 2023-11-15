@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const NEWSLETTER_URL = "https://f027c022.sibforms.com/serve/MUIEAGseA6FOM3_Gk8nXhu13oV6C1jwm9FIzJD3VVf4dunDIL-Vz7ebEbAHmXSog8qBswdPG6gDtgvz-y8nJZYZI37zyPNXITy6x1_Nfy9h3aTjzfr9leb9yl7_K54pk1Bv8uS3mX62sWk3FxhdxnER5H7dFxWe_Appeok7h9fy8UV_rbOcJNyVK6q6quGEwc6aQe93gMUKe9uoh"
+const NEWSLETTER_URL = "https://world.us21.list-manage.com/subscribe/post?u=52cabe9cfa943c69ee9796f8c&id=d5570d8dc0&f_id=0009e7e6f0"
 
 const ticketDemos = [
   {
@@ -268,12 +268,12 @@ function DesignBanner() {
       </Margin>
       <Margin>
         <Box mt={2}>
-          <Typography variant="h3" align='center' style={{color: '#424242', fontWeight: 600}} gutterBottom>Sign up to our newsletter</Typography>
+          <Typography variant="h3" align='center' style={{color: '#424242', fontWeight: 600}} gutterBottom>Sign up now to our new newsletter</Typography>
           <Typography variant="h5" align='center' style={{color: '#424242', fontWeight: 400}} gutterBottom>or contact us at <a href="mailto:hello@metapass.world" style={{color: '#29A6F9', textDecoration: 'none'}}>hello@metapass.world</a></Typography>
           <Grid container spacing={3} component={Box} pt={3}>
             <Grid md={2} />
             <Grid item xs={12} md={8}>
-              <form id="sib-form" method="POST" action={NEWSLETTER_URL}
+              <form id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" method="POST" action={NEWSLETTER_URL}
                 onSubmit={(e) => {
                     e.preventDefault();
                     if (!validateEmail(email)) {
@@ -281,7 +281,7 @@ function DesignBanner() {
                     } else {
                       var bodyFormData = new FormData();
                       bodyFormData.append('EMAIL', email);
-                      bodyFormData.append('OPT_IN', '1');
+                      // bodyFormData.append('OPT_IN', '1');
                       axios.post(
                         NEWSLETTER_URL, 
                         bodyFormData, 
@@ -322,7 +322,7 @@ function DesignBanner() {
                 success && <Box mt={3}>
                   <Alert severity="success">
                     <AlertTitle>Success!</AlertTitle>
-                    Thank you for signing up! Be sure to support us on the ongoing Theta Network Q3 2021 Hackthon too!
+                    Thank you for signing up! You will be hearing from us soon regarding the latest updates our team has got up to!
                   </Alert>
                 </Box>
               }
